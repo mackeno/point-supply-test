@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+	<!-- templatemo 418 form pack -->
+    <!-- 
+    Form Pack
+    http://www.templatemo.com/preview/templatemo_418_form_pack 
+    -->
+	<title>Eyecandy Lash Beauty - Thank you</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet" type="text/css">
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+	<link href="css/templatemo_style.css" rel="stylesheet" type="text/css">	
+</head>
+<body style="background: #Ff8488">
+	<div class="container">
+		<div class="col-md-12">
+			<h1 class="margin-bottom-15" style="color:white">Thank you for entering!🎉</h1>
+			<form class="form-horizontal templatemo-forgot-password-form templatemo-container" role="form" onsubmit="return false;">	
+				<div class="form-group">
+		          <div class="col-md-12" style="text-align:center">
+		          	Share the link below with your friends and family!
+		          </div>
+		        </div>		
+		        <div class="form-group">
+		          <div class="col-md-12">
+		            <input type="text" class="form-control" id="referral-link" placeholder="" disabled>	            
+		          </div>              
+		        </div>
+		        <div class="form-group">
+		          <div class="col-md-12" style="text-align:center">
+		            <button id="copy-btn" class="form-submit" style="background: #Ff8488 !important;" onclick="copyText()">Copy Referral Link</button>
+                    <br><br>
+		          </div>
+		        </div>
+		      </form>
+		</div>
+	</div>
+	<div class="center-me" style="margin-top: 15px; color: #444444">Giveaway powered by <a href="https://pointsupply.softr.app" style="color: #444444">PointSupply</a></div>
+	<script>
+		const storedValue = localStorage.getItem("email");
+    	const baseURL = window.location.protocol + "//" + window.location.host;
+
+		document.getElementById('referral-link').value = baseURL + "/?referrer=" + storedValue.toUpperCase();
+
+		function copyText() {
+			const referralLink = document.getElementById("referral-link");
+			const linkText = referralLink.value;
+			
+			const tempElement = document.createElement('textarea');
+			tempElement.value = linkText;
+			document.body.appendChild(tempElement);
+			tempElement.select();
+			document.execCommand('copy');
+			document.body.removeChild(tempElement);
+			
+			document.getElementById("copy-btn").textContent="Copied Successfully";
+		}
+	</script>
+</body>
+</html>
