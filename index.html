@@ -112,54 +112,6 @@
 	</div>
 
 	<div class="center-me" style="margin-top: 15px; color: #444444">Giveaway powered by <a href="https://pointsupply.softr.app" style="color: #444444">PointSupply</a></div>
-	<script>
-	// Get the referrer code from URL parameters
-	let params = new URLSearchParams(location.search);
-	let referrerCode = params.get('referrer');
-
-	// Find the referrer input field
-	let referrerGroup = document.getElementById('referrerGroup');
-	let referrerInput = document.getElementById('referrerInput');
-	if (referrerCode) {
-		// If referrer code is in the URL, show the input field and set the value
-		referrerGroup.style.display = 'block';
-		referrerInput.value = referrerCode;
-	} else {
-		// If referrer code is not in the URL, hide the input field
-		referrerGroup.style.display = 'none';
-	}
-		
-	// Get the modal
-	var modal = document.getElementById("myModal");
-	// Get the button that opens the modal
-	var btn = document.getElementById("openModalButton");
-	// Get the <span> element that closes the modal
-	var span = document.getElementById("closeModalButton");
-	
-	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-	  modal.style.display = "block";
-	}
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	  modal.style.display = "none";
-	}
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	  if (event.target == modal) {
-	    modal.style.display = "none";
-	  }
-	}
-	
-	// Retrieve the "First Name" input element
-	  const emailInput = document.getElementById("email");
-	
-	  // Add event listener to the form on submit
-	  document.getElementById("contact-form").addEventListener("submit", function() {
-	    // Store the value of the "First Name" input element into local storage
-	    localStorage.setItem("email", emailInput.value);
-	  });
-	</script>
-	<script type="module" src="js/firebase.js"></script>
+	<script type="module" src="js/script.js"></script>
 </body>
 </html>
